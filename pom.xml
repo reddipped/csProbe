@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.reddipped</groupId>
+    <artifactId>csProbe</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <developers>
+        <developer>
+            <id>NesPCJ</id>
+            <name>Peter van Nes</name>
+            <email>mailbox@petervannes.nl</email>
+            <url>reddipped.com</url>
+        </developer>
+    </developers>
+  
+    <name>csProbe</name>
+    <url>http://maven.apache.org</url>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <debug>false</debug>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.reddipped.csprobe.CSProbe</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <developer>Peter van Nes</developer>
+                            <email>mailbox@petervannes.nl</email>
+                            <url>reddipped.com</url>
+                        </manifestEntries>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+      
+        <!--
+                      <dependency>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>8.1.8.v20121106</version>
+                </dependency>
+        -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>8.1.8.v20121106</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>8.1.8.v20121106</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>cf</groupId>
+            <artifactId>conn-fwk-int</artifactId>
+            <version>1.0</version>
+            <!-- set scope to provided when generating jar file for 
+            delivery outside netbeans -->
+            <!--scope>provided</scope-->
+        </dependency>
+        <dependency>
+            <groupId>cf</groupId>
+            <artifactId>conn-fwk</artifactId>
+            <version>1.0</version>
+            <!-- set scope to provided when generating jar file for 
+            delivery outside netbeans -->
+            <!--scope>provided</scope-->
+        </dependency>
+    </dependencies>
+</project>

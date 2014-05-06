@@ -10,7 +10,7 @@
         <developer>
             <id>NesPCJ</id>
             <name>Peter van Nes</name>
-            <email>mailbox@petervannes.nl</email>
+            <email>peter@reddipped.com</email>
             <url>reddipped.com</url>
         </developer>
     </developers>
@@ -39,7 +39,7 @@
                         </manifest>
                         <manifestEntries>
                             <developer>Peter van Nes</developer>
-                            <email>mailbox@petervannes.nl</email>
+                            <email>peter@reddipped.com</email>
                             <url>reddipped.com</url>
                         </manifestEntries>
                     </archive>

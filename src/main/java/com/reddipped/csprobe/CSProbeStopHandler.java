@@ -1,11 +1,9 @@
 package com.reddipped.csprobe;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.logging.Level;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +16,7 @@ public class CSProbeStopHandler extends AbstractHandler {
 
     private final String secretKey;
     private final String csProbeSecretKeyFile ;
-    private Server server;
+    private final Server server;
     protected Integer exitCode;
     static Logger logger = Logger.getLogger("CSProbeStopHandler");
 

@@ -7,28 +7,17 @@ import java.io.IOException;
 import java.security.KeyStore;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import org.apache.log4j.Logger;
 import org.identityconnectors.common.CollectionUtil;
 import org.identityconnectors.common.IOUtil;
 import org.identityconnectors.common.security.GuardedString;
-import org.identityconnectors.framework.api.APIConfiguration;
-import org.identityconnectors.framework.api.ConnectorFacade;
-import org.identityconnectors.framework.api.ConnectorFacadeFactory;
 import org.identityconnectors.framework.api.ConnectorInfo;
 import org.identityconnectors.framework.api.ConnectorInfoManager;
 import org.identityconnectors.framework.api.ConnectorInfoManagerFactory;
 import org.identityconnectors.framework.api.RemoteFrameworkConnectionInfo;
-import org.identityconnectors.framework.api.operations.APIOperation;
-import org.identityconnectors.framework.api.operations.SchemaApiOp;
-import org.identityconnectors.framework.api.operations.TestApiOp;
-import org.identityconnectors.framework.api.operations.ValidateApiOp;
-import org.identityconnectors.framework.common.exceptions.ConnectorException;
 
 public class CSProbeProbe {
     
@@ -168,7 +157,10 @@ public class CSProbeProbe {
                 throw new CSProbeException("Connector: no bundles");
             }
             logger.debug("Number of bundles loaded " + connectorInfos.size());
-
+            
+            
+            // Additional optional code to do bundle validation
+            
 //            Iterator cIi = connectorInfos.iterator();
 //            while (cIi.hasNext()) {
 //                
@@ -248,10 +240,6 @@ public class CSProbeProbe {
                 }
                 
             }
-            
-//            if (exceptionClassName.equalsIgnoreCase("ConfigurationException")) {
-//                    throw new CSProbeFatalException("Bundle invalid, " + csException.getMessage());
-//            }
 
             throw new CSProbeFatalException("Uncontemplated error, (" + csException.getMessage() + ")");
         }
